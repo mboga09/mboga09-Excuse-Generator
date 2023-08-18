@@ -3,6 +3,7 @@ import "bootstrap";
 import "./style.css";
 import "./assets/img/4geeks.ico";
 
+//Generar nueva excusa mendiante escuchador de eventos
 window.onload = () => {
   document.querySelector("#btn").addEventListener("click", () => {
     document.querySelector("#the-excuse").innerHTML = generateExcuse();
@@ -11,6 +12,7 @@ window.onload = () => {
 };
 
 let generateExcuse = () => {
+  //Arreglos que contienen las partes que forman la excusa
   let pronoun = ["A", "The", "My"];
   let subject = [
     "dog",
@@ -50,18 +52,20 @@ let generateExcuse = () => {
     "on the street"
   ];
 
-  let proIndx = Math.floor(Math.random() * pronoun.length);
-  let subIndx = Math.floor(Math.random() * subject.length);
-  let actIndx = Math.floor(Math.random() * action.length);
+  //Asignacion de índice random
+  let pronounIndx = Math.floor(Math.random() * pronoun.length);
+  let subjectIndx = Math.floor(Math.random() * subject.length);
+  let actionIndx = Math.floor(Math.random() * action.length);
   let avoidIndx = Math.floor(Math.random() * avoid.length);
   let whereIndx = Math.floor(Math.random() * where.length);
 
+  //Concatenación para formar excusa
   return (
-    pronoun[proIndx] +
+    pronoun[pronounIndx] +
     " " +
-    subject[subIndx] +
+    subject[subjectIndx] +
     " " +
-    action[actIndx] +
+    action[actionIndx] +
     " " +
     avoid[avoidIndx] +
     " " +
